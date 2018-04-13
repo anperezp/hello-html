@@ -4,8 +4,8 @@ pipeline {
     stage('MonaLisa') {
       agent {
         docker {
-          image 'ubuntu:latest'
           args '-p 80:80 '
+          image 'ubuntu'
         }
         
       }
