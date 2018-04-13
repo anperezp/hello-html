@@ -11,11 +11,7 @@ pipeline {
       }
       steps {
         echo 'La mona lisa esta despierta'
-        sh '''
-
-
-#!/usr/bin/env bash
-sudo apt-get install -y apache2'''
+        sh 'sudo apt-get install apache2'
       }
     }
   }
