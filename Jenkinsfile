@@ -15,7 +15,7 @@ pipeline {
 
 
 #!/usr/bin/env bash
-apt-get install -y apache'''
+sudo apt-get install -y apache2'''
       }
     }
   }
