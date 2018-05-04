@@ -10,8 +10,8 @@ pipeline {
         
       }
       steps {
-        git 'https://github.com/anperezp/hello-html'
-        sh 'apt-get install -y git && git clone git://github.com/anperezp/hello-html'
+        git 'git://github.com/anperezp/hello-html'
+        sh 'git://github.com/anperezp/hello-html'
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
         sh 'cp hello-html/index.html /var/www/html/index.html'
