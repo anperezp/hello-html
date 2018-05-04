@@ -4,7 +4,7 @@ pipeline {
     stage('MonaLisa') {
       agent {
         dockerfile {
-          filename '/home/ana/Docker/Dockerfile'
+          filename 'Dockerfile'
         }
         
       }
@@ -12,6 +12,7 @@ pipeline {
         echo 'La mona lisa esta despierta'
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
+        dir(path: '/home/ana/Docker/Dockerfile')
       }
     }
   }
