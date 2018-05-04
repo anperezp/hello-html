@@ -3,9 +3,8 @@ pipeline {
   stages {
     stage('MonaLisa') {
       agent {
-        docker {
-          args '-p 80:80 '
-          image 'ubuntu'
+        dockerfile {
+          filename '/home/ana/Docker/Dockerfile'
         }
         
       }
