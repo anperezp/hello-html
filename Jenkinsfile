@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
-        sh 'clone https://github.com/anperezp/hello-html.git'
+        sh 'docker exec git clone https://github.com/anperezp/hello-html.git'
       }
     }
   }
