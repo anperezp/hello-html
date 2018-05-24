@@ -12,7 +12,7 @@ pipeline {
       steps {
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
-        sh 'git@github.com://anperezp/hello-html.git'
+        sh 'https://github.com/anperezp/hello-html.git'
       }
     }
   }
