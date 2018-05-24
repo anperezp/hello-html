@@ -12,7 +12,12 @@ pipeline {
       steps {
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
-        sh 'docker exec git clone https://github.com/anperezp/hello-html.git'
+        sh 'apt-get -y install git'
+      }
+    }
+    stage('El Grito') {
+      steps {
+        echo 'No se que hago'
       }
     }
   }
