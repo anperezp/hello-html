@@ -12,8 +12,7 @@ pipeline {
       steps {
         sh 'apt-get update'
         sh 'apt-get install -y apache2'
-        sh '''checkout([$class: \'GitSCM\', branches: [[name: \'*/master\']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: \'github\', url: \'https://github.com/anperezp/hello-html\']]])
-'''
+        sh 'git@github.com:/anperezp/hello-html.git'
       }
     }
   }
