@@ -17,9 +17,8 @@ pipeline {
       steps {
         sh 'apt-get -y install git && rm -Rf hello-html'
         sh 'git clone https://github.com/anperezp/hello-html.git'
-        sh 'cp index.html /var/www/index.html && cd /var/www'
+        sh ' cd /var/www && cp index.html index.html'
         fileExists 'index.html'
-        sh 'git clone https://github.com/anperezp/hello-html.git'
       }
     }
   }
