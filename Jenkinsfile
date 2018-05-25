@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('MonaLisa') {
+    stage('Container') {
       agent {
         docker {
           image 'ubuntu'
@@ -11,14 +11,20 @@ pipeline {
       }
       steps {
         sh 'apt-get update'
-        sh 'apt-get install -y apache2'
-        sh 'apt-get -y install git'
-        sh 'git clone https://github.com/anperezp/hello-html.git'
       }
     }
-    stage('El Grito') {
+    stage('Apache') {
       steps {
-        echo 'No se que hago'
+        sh 'apt-get install -y apache2'
+        sh 'service apache2 start'
+      }
+    }
+    stage('Git') {
+      steps {
+        sh 'apt-get -y install git'
+        sh 'git clone https://github.com/anperezp/hello-html.git'
+        sh 'cd /hello-html'
+        sh 'cp index.html /var/www/index.html'
       }
     }
   }
