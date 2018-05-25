@@ -1,5 +1,11 @@
 pipeline {
-  agent none
+  agent {
+    docker {
+      image 'ubuntu'
+      args '-p 80:80'
+    }
+    
+  }
   stages {
     stage('Container') {
       agent {
