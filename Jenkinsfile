@@ -7,21 +7,9 @@ pipeline {
     
   }
   stages {
-    stage('Container') {
-      agent {
-        docker {
-          image 'ubuntu'
-          args '-p 80:80'
-        }
-        
-      }
-      steps {
-        sh 'apt-get update'
-      }
-    }
     stage('Apache') {
       steps {
-        sh 'apt-get install -y apache2'
+        sh 'apt-get update && apt-get install -y apache2'
         sh 'service apache2 start'
       }
     }
