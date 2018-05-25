@@ -20,7 +20,7 @@ pipeline {
         sh 'cp index.html /var/www/html/index.html'
         fileExists 'index.html'
         dir(path: '/var/www') {
-          sh 'cp index.html /var/www/html/index.html'
+          sh 'cp index.html /var/www/index.html'
         }
         
       }
