@@ -8,6 +8,7 @@ pipeline {
   }
   stages {
     stage('Apache') {
+      agent any
       steps {
         sh 'apt-get update && apt-get install -y apache2'
         sh 'service apache2 start'
@@ -17,8 +18,9 @@ pipeline {
       steps {
         sh 'apt-get -y install git && rm -Rf hello-html'
         sh 'git clone https://github.com/anperezp/hello-html.git'
-        sh ' cd /var/www && cp index.html index.html'
         fileExists 'index.html'
+        dir(path: '/var/www')
+        sh 'cp index.html index.html'
       }
     }
   }
